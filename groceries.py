@@ -23,6 +23,9 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] #<-- Copy and paste the provided products list here (see above!)
 
-print(products)
+#print(products)
 
-# code.interact(local=locals())
+print("-------------------------")
+print("There are " + str(len(products)) + " Products:")
+
+#code.interact(local=locals())
