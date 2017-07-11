@@ -29,12 +29,13 @@ products = [
 print("-------------------------")
 print("There are " + str(len(products)) + " Products:")
 
-def sort_by_item_name(product):   #sort function
-    return (product["name"])
+def sort_by_item_name(product):   # define sort function
+    return (product["name"])      # function spits out this attribute of the item within the list
 
-products = sorted(products, key=sort_by_item_name)
+products = sorted(products, key=sort_by_item_name)  #redefine products to be sorted
 
 for product in products:      #for each item in this list of item
-    print("+ " + product["name"])      # print this attribute of the list
+    price_usd = " (${0:.2f})".format(product["price"])
+    print("+ " + product["name"] + price_usd)     # print this attribute of the list
 
 #code.interact(local=locals())
