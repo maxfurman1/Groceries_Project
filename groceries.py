@@ -28,4 +28,7 @@ products = [
 print("-------------------------")
 print("There are " + str(len(products)) + " Products:")
 
+for product in products:      #for each item in this list of item
+    print("+ " + product["name"])      # print this attribute of the list
+
 #code.interact(local=locals())
