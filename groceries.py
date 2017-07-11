@@ -1,4 +1,5 @@
 import code
+import operator
 
 products = [
  {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -27,6 +28,11 @@ products = [
 
 print("-------------------------")
 print("There are " + str(len(products)) + " Products:")
+
+def sort_by_item_name(product):   #sort function
+    return (product["name"])
+
+products = sorted(products, key=sort_by_item_name)
 
 for product in products:      #for each item in this list of item
     print("+ " + product["name"])      # print this attribute of the list
