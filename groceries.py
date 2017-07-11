@@ -26,6 +26,10 @@ products = [
 
 #print(products)
 
+#
+# PRODUCTS
+#
+
 print("-------------------------")
 print("There are " + str(len(products)) + " Products:")
 
@@ -37,5 +41,22 @@ products = sorted(products, key=sort_by_item_name)  #redefine products to be sor
 for product in products:      #for each item in this list of item
     price_usd = " (${0:.2f})".format(product["price"])
     print("+ " + product["name"] + price_usd)     # print this attribute of the list
+
+#
+# DEPARTMENTS
+#
+
+departments = []    # create new list
+
+for product in products:          #loop through
+    departments.append(product["department"])      #add info from original list into new departments list
+
+departments = set(departments)
+departments = list(departments)
+
+print(departments)
+
+#print("-------------------------")
+#print("There are " + str(len(departments)) + " Departments")
 
 #code.interact(local=locals())
