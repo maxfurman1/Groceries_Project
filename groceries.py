@@ -54,9 +54,16 @@ for product in products:          #loop through
 departments = set(departments)
 departments = list(departments)
 
-print(departments)
+#print(departments)
 
-#print("-------------------------")
-#print("There are " + str(len(departments)) + " Departments")
+print("-------------------------")
+print("There are " + str(len(departments)) + " Departments:")
 
+def sort_by_dept_name(department):
+    return (department)
+
+departments = sorted(departments, key=sort_by_dept_name)
+
+for department in departments:
+    print("+ " + department.title())
 #code.interact(local=locals())
