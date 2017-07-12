@@ -46,24 +46,31 @@ for product in products:      #for each item in this list of item
 # DEPARTMENTS
 #
 
-departments = []    # create new list
+departments = []
 
-for product in products:          #loop through
-    departments.append(product["department"])      #add info from original list into new departments list
+for product in products:
+    departments.append(product["department"])
 
-departments = set(departments)
+#print(len(departments))
+
+departments = set(departments) # removing duplicate values
 departments = list(departments)
+departments = sorted(departments)
 
-#print(departments)
+print("--------------")
+print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 
-print("-------------------------")
-print("There are " + str(len(departments)) + " Departments:")
+#for department_name in departments:
+#    count_of_products = departments.count(department_name)
+#    print(" + " + department_name.title() + " (" + str(count_of_products) + " products)")
 
-def sort_by_dept_name(department):
-    return (department)
-
-departments = sorted(departments, key=sort_by_dept_name)
+def get_products(department_name):
+    return [product for product in products if product["department"] == department_name] # list comprehension for the win. so helpful.
 
 for department in departments:
-    print("+ " + department.title())
-#code.interact(local=locals())
+    department_products = get_products(department)
+    product_count = len(department_products)
+    print(" + " + department.title() + " (" + str(product_count) + " products)")
+
+
+#code.interact(local=locals())    #BREAK
